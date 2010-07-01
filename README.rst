@@ -10,7 +10,7 @@ To use:
 
 ::
 
-  CREATE FUNCTION pl_bf_call_handler() RETURNS language_handler AS '/path/to/pl.so' LANGUAGE C;
+  CREATE FUNCTION pl_bf_call_handler() RETURNS language_handler AS 'pl_bf.so' LANGUAGE C;
 
   CREATE LANGUAGE brainfuck HANDLER pl_bf_call_handler;
 
