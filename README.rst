@@ -14,8 +14,9 @@ To use:
 
   CREATE LANGUAGE brainfuck HANDLER pl_bf_call_handler;
 
-  CREATE FUNCTION do_stuff() RETURNS int AS $$
-  ++[->+<]+
+  -- Add the low byte of 2 integers:
+  CREATE FUNCTION bf_add(int, int) RETURNS int AS $$
+  >>>>[-<<<<+>>>>]
   $$ LANGUAGE brainfuck;
 
-  SELECT * FROM do_stuff();  -- 513, obviously
+  SELECT * FROM bf_add(3, 5);  -- 8!
