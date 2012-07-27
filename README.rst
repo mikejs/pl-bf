@@ -6,7 +6,20 @@ To install:
 
   make install
 
-To use:
+To use in PostgreSQL 9.1 and later:
+
+::
+
+  CREATE EXTENSION plbf;
+
+  -- Add the low byte of 2 integers:
+  CREATE FUNCTION bf_add(int, int) RETURNS int AS $$
+  >>>>[-<<<<+>>>>]
+  $$ LANGUAGE plbf;
+
+  SELECT * FROM bf_add(3, 5);  -- 8!
+
+Older versions:
 
 ::
 
