@@ -13,7 +13,7 @@
 
 PG_MODULE_MAGIC;
 
-PG_FUNCTION_INFO_V1(pl_bf_call_handler);
+PG_FUNCTION_INFO_V1(plbf_call_handler);
 
 int interpret(char*, int, char*);
 
@@ -58,7 +58,7 @@ size_t append_datum(char* buf, Datum val, bool isnull, Oid typeoid)
     return 0;
 }
 
-Datum pl_bf_call_handler(PG_FUNCTION_ARGS)
+Datum plbf_call_handler(PG_FUNCTION_ARGS)
 {
     FmgrInfo flinfo;
     Datum retval, proc_source_datum;
